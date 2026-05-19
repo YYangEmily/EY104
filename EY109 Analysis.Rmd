@@ -90,13 +90,13 @@ p
 
 ```{r}
 
-newdata <- subset(i, min <= 1020)
-newdata<- as.numeric()
+i <- subset(i, min <= 1020)
+
 
 my_vec <- numeric()
 
-for (col in newdata) {
-    a <- AUC(min, col, method = c("trapezoid"))
+for (col in i) {
+    a <- AUC(min, col, method = c("spline"))
     my_vec <- c(my_vec, a)
 }
 
